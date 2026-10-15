@@ -13,7 +13,7 @@ export function HomeCtaBand() {
             Ready to connect?
           </h2>
           <p className="mt-2 text-sm text-white/90">
-            Call {site.phone} or use the contact form for project enquiries.
+            Call {site.phone} or email {site.email}.
           </p>
         </div>
         <Link

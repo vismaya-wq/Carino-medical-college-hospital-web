@@ -31,7 +31,13 @@ export function InstitutionalHeader() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden items-center gap-4 lg:flex">
+          <a
+            href={`mailto:${site.email}`}
+            className="hidden text-sm font-semibold text-navy hover:text-primary xl:inline"
+          >
+            {site.email}
+          </a>
           <a
             href={`tel:${site.phoneTel}`}
             className="flex items-center gap-2 text-sm font-bold text-[#c0392b]"
@@ -80,6 +86,11 @@ export function InstitutionalHeader() {
             <li>
               <a href={`tel:${site.phoneTel}`} className="block py-2 text-sm font-bold text-[#c0392b]">
                 {site.phone}
+              </a>
+            </li>
+            <li>
+              <a href={`mailto:${site.email}`} className="block py-2 text-sm font-medium text-navy">
+                {site.email}
               </a>
             </li>
             <li>

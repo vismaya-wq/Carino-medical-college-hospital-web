@@ -82,8 +82,12 @@ export function HomeHero() {
                 </dd>
               </div>
               <div className="rounded-lg bg-cool px-4 py-3">
-                <dt className="text-xs font-bold uppercase tracking-wide text-muted">Institution</dt>
-                <dd className="mt-1 font-semibold text-charcoal">{site.collegeName}</dd>
+                <dt className="text-xs font-bold uppercase tracking-wide text-muted">Email</dt>
+                <dd className="mt-1">
+                  <a href={`mailto:${site.email}`} className="font-semibold text-primary hover:underline">
+                    {site.email}
+                  </a>
+                </dd>
               </div>
             </dl>
 

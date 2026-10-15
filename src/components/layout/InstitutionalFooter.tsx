@@ -43,6 +43,9 @@ export function InstitutionalFooter() {
             <li>
               <a href={`tel:${site.phoneTel}`} className="hover:text-white">{site.phone}</a>
             </li>
+            <li>
+              <a href={`mailto:${site.email}`} className="hover:text-white">{site.email}</a>
+            </li>
           </ul>
         </div>
       </div>

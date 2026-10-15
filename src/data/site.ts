@@ -11,7 +11,7 @@ export const site = {
   address: "Kozhikode, Kerala",
   phone: "+91 9846567888",
   phoneTel: "+919846567888",
-  email: "[Email Address]",
+  email: "mail.ritk@gmail.com",
   projectStatus: "Planning stage",
   nav: [
     { label: "Home", href: "/" },
@@ -70,7 +70,7 @@ export const serviceCards = [
   },
   {
     title: "Enquiries",
-    text: "Speak with the project team by phone.",
+    text: "Call or email the project team.",
     accent: "border-t-[#e76f51]",
     icon: "phone" as const,
     href: `tel:${site.phoneTel}`,
