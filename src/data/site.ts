@@ -2,156 +2,84 @@ export const site = {
   institutionName: "Resurgent India Trust",
   trustName: "Resurgent India Trust",
   collegeName: "Resurgent India Medical College",
-  descriptor: "Proposed Medical College & Teaching Hospital",
-  tagline: "Advancing Medical Education. Envisioning Better Healthcare.",
+  descriptor: "Medical College & Teaching Hospital",
+  taglineLead: "Medical Education.",
+  taglineAccent: "Community Healthcare.",
   heroIntro:
-    "Resurgent India Trust presents a proposed integrated medical college and teaching hospital—planned for academic rigour, supervised clinical training, and transparent institutional governance.",
-  heroSubline:
-    "Structured for medical education, clinical learning, and public disclosure requirements relevant to NMC-oriented institutional presentation.",
-  description:
-    "A thoughtfully envisioned institution bringing together academic excellence, clinical learning, and patient-centered healthcare.",
-  location: "[Proposed Location]",
-  address: "[Street Address], [City], [State] — [PIN]",
-  phone: "[Phone Number]",
+    "A proposed integrated campus in Kozhikode for training physicians and delivering teaching-hospital care.",
+  location: "Kozhikode, Kerala",
+  address: "Kozhikode, Kerala",
+  phone: "+91 9846567888",
+  phoneTel: "+919846567888",
   email: "[Email Address]",
-  projectType: "Integrated medical college with associated teaching hospital",
-  projectStatus: "Proposal and institutional planning (pre-operational)",
-  /** Site pages: Home, About, Contact only */
+  projectStatus: "Planning stage",
   nav: [
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
   ],
-  utilityLinks: [
-    { label: "Important updates", href: "/#important-updates" },
-    { label: "Project enquiry", href: "/contact" },
-  ],
 } as const;
-
-export type Announcement = {
-  date: string;
-  category: string;
-  title: string;
-  href?: string;
-};
-
-/** Add verified announcements only. Empty = public empty state on site. */
-export const announcements: Announcement[] = [];
 
 export const heroFeatures = [
+  { title: "Academic focus", icon: "academic" as const },
+  { title: "Clinical training", icon: "clinical" as const },
+  { title: "Kozhikode campus", icon: "campus" as const },
+] as const;
+
+export const projectPillars = [
   {
-    title: "Academic Excellence",
-    description: "Structured undergraduate medical education and faculty-led learning.",
+    id: "academics",
     icon: "academic" as const,
-    href: "/#academics",
+    title: "Medical college",
+    text: "Undergraduate medical programmes.",
   },
   {
-    title: "Clinical Training",
-    description: "Teaching hospital environments for supervised clinical exposure.",
+    id: "training",
     icon: "clinical" as const,
-    href: "/#hospital",
+    title: "Clinical training",
+    text: "Supervised hospital learning.",
   },
   {
-    title: "Campus & Infrastructure",
-    description: "Planned academic, laboratory, and hospital facilities.",
+    id: "hospital",
+    icon: "clinical" as const,
+    title: "Teaching hospital",
+    text: "Patient care and training together.",
+  },
+  {
+    id: "campus",
     icon: "campus" as const,
-    href: "/#campus",
-  },
-  {
-    title: "Regulatory Disclosures",
-    description: "NMC-oriented public information published when verified.",
-    icon: "disclosure" as const,
-    href: "/#nmc-disclosures",
+    title: "Campus plan",
+    text: "One site for college and hospital.",
   },
 ] as const;
 
-export const institutionalStrip = [
+export const serviceCards = [
   {
-    title: "Medical Education",
-    description:
-      "Structured undergraduate medical learning within a dedicated academic environment.",
+    title: "Location",
+    text: "Proposed campus in Kozhikode, Kerala.",
+    accent: "border-t-primary",
+    icon: "pin" as const,
+    href: "/contact",
   },
   {
-    title: "Teaching Hospital",
-    description:
-      "Clinical exposure aligned with curriculum through an associated hospital partner.",
+    title: "Project status",
+    text: "Institution in planning stage. Updates when announced.",
+    accent: "border-t-teal",
+    icon: "info" as const,
+    href: "/about",
   },
   {
-    title: "Institutional Development",
-    description:
-      "Campus planning, governance, and phased development of academic and clinical facilities.",
-  },
-  {
-    title: "Community Healthcare Vision",
-    description:
-      "Long-term intent to contribute to accessible, dignified care in the region served.",
+    title: "Enquiries",
+    text: "Speak with the project team by phone.",
+    accent: "border-t-[#e76f51]",
+    icon: "phone" as const,
+    href: `tel:${site.phoneTel}`,
   },
 ] as const;
 
-export const projectGlance = [
-  { label: "Medical college", value: site.collegeName },
-  { label: "Sponsoring trust", value: site.trustName },
-  { label: "Proposed location", value: site.location },
-  { label: "Project type", value: site.projectType },
-  { label: "Status", value: site.projectStatus },
-] as const;
-
-export const pillars = {
-  college: {
-    index: "01",
-    label: "The Medical College",
-    title: "An academic foundation for future physicians",
-    body:
-      "The proposed college is envisioned to deliver structured medical education—combining classroom learning, faculty mentorship, and progressive clinical immersion within the same institutional framework.",
-  },
-  hospital: {
-    index: "02",
-    label: "The Teaching Hospital",
-    title: "Clinical learning connected to patient care",
-    body:
-      "The associated teaching hospital is planned as the clinical arm of the institution—supporting supervised training, healthcare delivery, and the practical application of medical knowledge.",
-  },
-} as const;
-
-/** Placeholder rows — replace only with verified NMC disclosure data */
-export const nmcDisclosureRows = [
-  { label: "Establishment / recognition status", value: "To be published when formally applicable" },
-  { label: "Course intake & seat matrix", value: "Not announced (pre-operational)" },
-  { label: "Faculty strength", value: "To be published when verified" },
-  { label: "Hospital bed strength", value: "To be published when verified" },
-  { label: "Annual compliance reports", value: "No reports published yet" },
-] as const;
-
-export const educationFlow = [
-  {
-    step: "Medical Education",
-    text: "Foundational sciences, professional ethics, and structured academic progression.",
-  },
-  {
-    step: "Clinical Learning",
-    text: "Supervised exposure in hospital settings aligned with curricular milestones.",
-  },
-  {
-    step: "Healthcare Service",
-    text: "Patient-centered care as the context for training and community responsibility.",
-  },
-] as const;
-
-export const values = [
-  {
-    title: "Academic integrity",
-    text: "Rigorous standards in teaching, assessment, and professional conduct.",
-  },
-  {
-    title: "Clinical responsibility",
-    text: "Learning environments that respect patients, safety, and ethical practice.",
-  },
-  {
-    title: "Institutional accountability",
-    text: "Transparent governance and measured, verifiable public communication.",
-  },
-  {
-    title: "Public health perspective",
-    text: "Education oriented toward community need and long-term service.",
-  },
+export const stats = [
+  { value: "Kozhikode", label: "Proposed location" },
+  { value: "1", label: "Integrated campus" },
+  { value: site.projectStatus, label: "Current status" },
+  { value: "24/7", label: "Enquiry line" },
 ] as const;

@@ -1,14 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  --color-navy: #17344d;
-  --color-navy-deep: #0f2638;
-  --color-teal: #427a80;
+  --color-navy: #0c4a7a;
+  --color-navy-deep: #083556;
+  --color-primary: #1b7fd6;
+  --color-primary-dark: #1568b3;
+  --color-primary-light: #e8f4fc;
+  --color-teal: #2a9d8f;
   --color-pale: #e8f0f3;
-  --color-cool: #f5f8fa;
-  --color-muted: #4f5f68;
-  --color-charcoal: #26343d;
-  --color-line: #d7e2e8;
+  --color-cool: #f0f5f9;
+  --color-muted: #5c6b7a;
+  --color-charcoal: #1e2a36;
+  --color-line: #d8e2eb;
   --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-display), ui-serif, Georgia, serif;
 }
@@ -19,7 +22,7 @@ html {
 
 body {
   font-family: var(--font-sans);
-  color: #26343d;
+  color: #1e2a36;
   background: #ffffff;
 }
 
@@ -29,55 +32,39 @@ body {
 
 @layer components {
   .inst-container {
-    @apply mx-auto w-full max-w-6xl px-4;
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6;
   }
 
   .inst-grid {
     @apply grid grid-cols-12 gap-4 lg:gap-6;
   }
 
-  .span-12 {
-    @apply col-span-12;
-  }
-
-  .span-lg-4 {
-    @apply col-span-12 lg:col-span-4;
-  }
-
-  .span-lg-5 {
-    @apply col-span-12 lg:col-span-5;
-  }
-
-  .span-lg-7 {
-    @apply col-span-12 lg:col-span-7;
-  }
-
-  .span-lg-8 {
-    @apply col-span-12 lg:col-span-8;
-  }
-
   .label-upper {
-    @apply text-xs font-bold uppercase tracking-[0.16em] text-teal;
+    @apply text-xs font-bold uppercase tracking-[0.14em] text-primary;
   }
 
   .section-block__title {
-    @apply mt-1 font-serif text-3xl font-bold text-navy;
+    @apply mt-1 font-serif text-3xl font-bold text-navy md:text-[2rem];
   }
 
   .section-block__lead {
-    @apply mt-3 text-sm leading-relaxed text-muted;
+    @apply mt-2 text-sm leading-relaxed text-muted;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-md bg-primary px-5 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-primary-dark;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center rounded-md border-2 border-primary bg-white px-5 py-2.5 text-sm font-bold text-primary transition hover:bg-primary-light;
   }
 
   .border-line {
-    @apply border-[#d7e2e8];
-  }
-
-  .bg-clinical {
-    @apply bg-white;
+    @apply border-[#d8e2eb];
   }
 
   .bg-cool {
-    @apply bg-[#f5f8fa];
+    @apply bg-[#f0f5f9];
   }
 
   .bg-pale {
@@ -85,60 +72,30 @@ body {
   }
 
   .text-navy {
-    @apply text-[#17344d];
+    @apply text-[#0c4a7a];
   }
 
   .text-muted {
-    @apply text-[#4f5f68];
+    @apply text-[#5c6b7a];
   }
 
   .text-teal {
-    @apply text-[#427a80];
+    @apply text-[#2a9d8f];
   }
 
-  .panel-interactive {
-    @apply rounded-lg transition-shadow hover:shadow-lg;
+  .bg-navy {
+    @apply bg-[#0c4a7a];
   }
 
-  .field-input {
-    @apply w-full rounded border border-[#c5d4dc] bg-white px-3 py-2.5 text-sm text-[#26343d] outline-none focus:border-teal focus:ring-2 focus:ring-teal/20;
-  }
-
-  .field-error {
-    @apply border-red-600;
-  }
-
-  .field-hint {
-    @apply mt-1 text-xs text-red-600;
+  .bg-navy-deep {
+    @apply bg-[#083556];
   }
 
   .editorial-link {
-    @apply inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-navy hover:text-teal;
+    @apply inline-flex items-center gap-2 text-sm font-semibold;
   }
 
-  .scroll-mt-28 {
-    scroll-margin-top: 7rem;
-  }
-
-  .nmc-table {
-    @apply w-full text-left;
-  }
-
-  .nmc-table th {
-    @apply bg-pale px-4 py-3 text-xs font-bold uppercase tracking-wide text-navy;
-  }
-
-  .nmc-table td {
-    @apply border-t border-line px-4 py-3 text-sm;
-  }
-
-  .btn-primary {
-    @apply inline-flex items-center justify-center rounded-md bg-navy px-4 py-2.5 text-xs font-bold uppercase text-white hover:bg-navy-deep;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
+  .field-input {
+    @apply w-full rounded-md border border-line bg-white px-3 py-2.5 text-sm text-charcoal outline-none focus:border-primary focus:ring-2 focus:ring-primary/20;
   }
 }

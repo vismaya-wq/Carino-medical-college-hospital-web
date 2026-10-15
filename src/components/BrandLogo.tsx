@@ -20,10 +20,8 @@ export function BrandLogo({
   className = "",
 }: BrandLogoProps) {
   const s = sizes[size];
-  const titleClass =
-    variant === "light" ? "text-white" : "text-[#17344d]";
-  const subClass =
-    variant === "light" ? "text-white/75" : "text-[#4f5f68]";
+  const titleClass = variant === "light" ? "text-white" : "text-[#0c4a7a]";
+  const subClass = variant === "light" ? "text-white/75" : "text-[#5c6b7a]";
 
   return (
     <div className={`flex min-w-0 items-center gap-2.5 ${className}`}>
