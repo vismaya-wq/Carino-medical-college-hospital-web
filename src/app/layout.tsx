@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Manrope, Source_Serif_4 } from "next/font/google";
+import { DM_Sans, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/data/site";
@@ -7,10 +7,10 @@ import { site } from "@/data/site";
 const display = Source_Serif_4({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600"],
 });
 
-const body = Manrope({
+const body = DM_Sans({
   variable: "--font-body",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -18,8 +18,8 @@ const body = Manrope({
 
 export const metadata: Metadata = {
   title: {
-    default: `${site.institutionName} | ${site.descriptor}`,
-    template: `%s | ${site.institutionName}`,
+    default: `Proposed ${site.projectName}`,
+    template: `%s · ${site.institutionShort}`,
   },
   description: site.heroIntro,
 };
@@ -31,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${display.variable} ${body.variable} h-full`}>
-      <body className="flex min-h-full flex-col bg-white font-sans antialiased text-[#26343d]">
+      <body className="flex min-h-full flex-col bg-paper font-sans antialiased text-charcoal">
         <PageShell>{children}</PageShell>
       </body>
     </html>

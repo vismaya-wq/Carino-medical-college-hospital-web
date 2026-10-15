@@ -1,17 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-  --color-navy: #0c4a7a;
-  --color-navy-deep: #083556;
-  --color-primary: #1b7fd6;
-  --color-primary-dark: #1568b3;
-  --color-primary-light: #e8f4fc;
-  --color-teal: #2a9d8f;
-  --color-pale: #e8f0f3;
-  --color-cool: #f0f5f9;
-  --color-muted: #5c6b7a;
-  --color-charcoal: #1e2a36;
-  --color-line: #d8e2eb;
+  --color-forest: #064d27;
+  --color-forest-deep: #04381c;
+  --color-sage: #7f9186;
+  --color-charcoal: #242c28;
+  --color-paper: #f7f8f5;
+  --color-line: #dde3dc;
+  --color-primary: #064d27;
+  --color-primary-dark: #04381c;
+  --color-primary-light: #e8efe9;
+  --color-muted: #7f9186;
+  --color-navy: #242c28;
+  --color-teal: #7f9186;
   --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-display), ui-serif, Georgia, serif;
 }
@@ -22,80 +23,40 @@ html {
 
 body {
   font-family: var(--font-sans);
-  color: #1e2a36;
-  background: #ffffff;
-}
-
-.font-serif {
-  font-family: var(--font-serif);
+  color: #242c28;
+  background: #f7f8f5;
 }
 
 @layer components {
-  .inst-container {
-    @apply mx-auto w-full max-w-7xl px-4 sm:px-6;
+  .proposal-container {
+    @apply mx-auto w-full max-w-[1200px] px-5 sm:px-8;
   }
 
-  .inst-grid {
-    @apply grid grid-cols-12 gap-4 lg:gap-6;
+  .proposal-grid {
+    @apply grid grid-cols-12 gap-x-6 gap-y-10 lg:gap-x-10;
   }
 
-  .label-upper {
-    @apply text-xs font-bold uppercase tracking-[0.14em] text-primary;
+  .section-eyebrow {
+    @apply text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-sage;
   }
 
-  .section-block__title {
-    @apply mt-1 font-serif text-3xl font-bold text-navy md:text-[2rem];
+  .section-index {
+    @apply font-mono text-xs tracking-wide text-sage;
   }
 
-  .section-block__lead {
-    @apply mt-2 text-sm leading-relaxed text-muted;
+  .heading-serif {
+    @apply font-serif text-[1.75rem] font-medium leading-snug text-charcoal sm:text-[2rem] lg:text-[2.25rem];
   }
 
-  .btn-primary {
-    @apply inline-flex items-center justify-center rounded-md bg-primary px-5 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-primary-dark;
+  .body-muted {
+    @apply text-[0.95rem] leading-[1.75] text-charcoal/80;
   }
 
-  .btn-outline {
-    @apply inline-flex items-center justify-center rounded-md border-2 border-primary bg-white px-5 py-2.5 text-sm font-bold text-primary transition hover:bg-primary-light;
+  .link-arrow {
+    @apply inline-flex items-center gap-2 text-sm font-medium text-forest transition hover:text-forest-deep;
   }
 
-  .border-line {
-    @apply border-[#d8e2eb];
-  }
-
-  .bg-cool {
-    @apply bg-[#f0f5f9];
-  }
-
-  .bg-pale {
-    @apply bg-[#e8f0f3];
-  }
-
-  .text-navy {
-    @apply text-[#0c4a7a];
-  }
-
-  .text-muted {
-    @apply text-[#5c6b7a];
-  }
-
-  .text-teal {
-    @apply text-[#2a9d8f];
-  }
-
-  .bg-navy {
-    @apply bg-[#0c4a7a];
-  }
-
-  .bg-navy-deep {
-    @apply bg-[#083556];
-  }
-
-  .editorial-link {
-    @apply inline-flex items-center gap-2 text-sm font-semibold;
-  }
-
-  .field-input {
-    @apply w-full rounded-md border border-line bg-white px-3 py-2.5 text-sm text-charcoal outline-none focus:border-primary focus:ring-2 focus:ring-primary/20;
+  .hairline {
+    @apply border-[#dde3dc];
   }
 }

@@ -1,51 +1,50 @@
 import type { Metadata } from "next";
-import { ContactForm } from "@/components/ContactForm";
 import { site } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: `Contact ${site.institutionName} — ${site.location}.`,
+  description: `Official project correspondence for the proposed ${site.projectName}.`,
 };
 
-export default function ContactPage() {
-  const showEmail = !site.email.startsWith("[");
-
+function Row({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <section className="py-12 md:py-16">
-      <div className="inst-container">
-        <div className="inst-grid items-start">
-          <div className="col-span-12 lg:col-span-4">
-            <h1 className="font-serif text-3xl text-navy">Contact</h1>
-            <dl className="mt-6 space-y-4 text-sm">
-              <div>
-                <dt className="text-muted">Location</dt>
-                <dd className="mt-0.5 font-medium text-charcoal">{site.location}</dd>
-              </div>
-              <div>
-                <dt className="text-muted">Phone</dt>
-                <dd className="mt-0.5">
-                  <a href={`tel:${site.phoneTel}`} className="font-medium text-navy hover:text-teal">
-                    {site.phone}
-                  </a>
-                </dd>
-              </div>
-              {showEmail ? (
-                <div>
-                  <dt className="text-muted">Email</dt>
-                  <dd className="mt-0.5">
-                    <a href={`mailto:${site.email}`} className="font-medium text-navy hover:text-teal">
-                      {site.email}
-                    </a>
-                  </dd>
-                </div>
-              ) : null}
-            </dl>
-          </div>
+    <div className="grid gap-2 border-b border-[#dde3dc] py-5 sm:grid-cols-[10rem_1fr] sm:gap-8">
+      <dt className="text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-sage">
+        {label}
+      </dt>
+      <dd className="text-sm font-medium text-charcoal">{children}</dd>
+    </div>
+  );
+}
 
-          <div className="col-span-12 lg:col-span-8">
-            <div className="border border-line bg-cool p-6 md:p-8">
-              <ContactForm />
-            </div>
+export default function ContactPage() {
+  return (
+    <section className="bg-white">
+      <div className="proposal-container py-14 lg:py-20">
+        <div className="proposal-grid">
+          <div className="col-span-12 lg:col-span-5">
+            <h1 className="heading-serif">Project Correspondence</h1>
+            <p className="body-muted mt-5">
+              For official correspondence regarding the proposed {site.projectName}.
+            </p>
+          </div>
+          <div className="col-span-12 lg:col-span-7">
+            <dl className="border-t border-[#dde3dc]">
+              <Row label="Sponsoring organisation">{site.trustName}</Row>
+              <Row label="Chairman &amp; Managing Trustee">{site.chairmanName}</Row>
+              <Row label="Registered office">{site.registeredOffice}</Row>
+              <Row label="Proposed project location">{site.projectLocationFull}</Row>
+              <Row label="Email">
+                <a href={`mailto:${site.email}`} className="text-forest hover:underline">
+                  {site.email}
+                </a>
+              </Row>
+              <Row label="Telephone">
+                <a href={`tel:${site.phoneTel}`} className="text-forest hover:underline">
+                  {site.phone}
+                </a>
+              </Row>
+            </dl>
           </div>
         </div>
       </div>
